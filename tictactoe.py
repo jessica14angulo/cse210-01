@@ -1,3 +1,20 @@
+""""
+Tic-tac-toe game
+Author: Jessica Angulo
+"""
+
+def main():
+    player = player_turn("")
+    board = create_board()
+    print("Welcome to Tic-Tac-Toe game! Please enjoy!")
+    while not (winner(board) or draw(board)):
+        show_board(board)
+        move(player, board)
+        player = player_turn(player)
+    show_board(board)
+    print(f"Player '{player}' you lost!")
+    print("Good game. Thanks for playing!")
+
 def create_board():
     board = []
     for square in range(9):
