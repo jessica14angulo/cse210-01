@@ -39,3 +39,22 @@ def winner(board):
             board[2] == board[5] == board[8] or
             board[0] == board[4] == board[8] or
             board[2] == board[4] == board[6]) 
+
+def draw(board):
+    for square in range(9):
+        if board[square] != "x" or board[square] != "o":
+            return False
+    return True
+
+def move(player, board):
+    square = int(input(f"It is {player}'s turn to choose a square (1-9): "))
+    board[square -1] = player
+
+def player_turn(current):
+    if current == "" or current =="o":
+        return "x"
+    elif current == "x":
+        return "o"
+
+if __name__ == "__main__":
+    main()
